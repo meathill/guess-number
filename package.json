@@ -1,0 +1,38 @@
+{
+  "name": "guess-number",
+  "version": "0.1.0",
+  "description": "a small game, try to use tailwind css",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve --config build/webpack.config.js",
+    "build": "webpack --mode production build/webpack.config.js",
+    "lint": "eslint --fix --ext=.vue,.js ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meathill/guess-number.git"
+  },
+  "keywords": [],
+  "author": "Meathill <meathill@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meathill/guess-number/issues"
+  },
+  "homepage": "https://github.com/meathill/guess-number#readme",
+  "dependencies": {
+    "tailwindcss": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "autoprefixer": "^10.2.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "html-webpack-plugin": "^5.1.0",
+    "postcss": "^8.2.6",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
