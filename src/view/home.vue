@@ -11,7 +11,7 @@
     router-link.block.bg-blue-600.rounded.text-white.text-center.leading-loose.text-xl.mt-3(
       :to="{name: 'help'}",
     )
-      i.bi.bi-question.mr-2
+      i.bi.bi-patch-question-fill.mr-2
       | Help
 </template>
 

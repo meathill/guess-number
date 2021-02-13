@@ -1,7 +1,9 @@
 const {resolve} = require('path');
 const {DefinePlugin} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const isDevServer = process.argv.indexOf('serve') !== -1;
 
@@ -17,7 +19,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          isDevServer ? 'style-loader' : MiniCSSExtractPlugin.loader,
+          isDevServer ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader'
         ]
@@ -25,7 +27,7 @@ module.exports = {
       {
         test: /\.styl(us)?$/,
         use: [
-          isDevServer ? 'style-loader' : MiniCSSExtractPlugin.loader,
+          isDevServer ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'stylus-loader',
@@ -79,5 +81,25 @@ module.exports = {
       __VUE_PROD_DEVTOOLS__: false,
     }),
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'screen.css',
+    }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        exclude: /node_modules/,
+        terserOptions: {
+          ecma: 9,
+          toplevel: true,
+          compress: {
+            drop_console: true, // eslint-disable-line camelcase
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
+  },
 };
