@@ -3,9 +3,7 @@ const {DefinePlugin} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
-const isDevServer = process.env.WEBPACK_DEV_SERVER;
-
-console.log('xxxx', isDevServer, );
+const isDevServer = process.argv.indexOf('serve') !== -1;
 
 module.exports = {
   mode: 'development',

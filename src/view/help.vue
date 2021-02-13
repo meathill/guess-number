@@ -1,15 +1,10 @@
 <template lang="pug">
-router-view
+#help
+  h1 Help
 </template>
 
 <script>
-import {RouterView} from 'vue-router';
-
 export default {
-  components: {
-    RouterView,
-  },
-
   setup() {
 
   }

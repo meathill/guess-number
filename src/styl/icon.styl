@@ -1,0 +1,15 @@
+.bi
+  background-color currentColor
+  mask-size 1em
+  mark-repeat no-repeat
+  mask-position center
+
+  &::before
+    display inline-block
+    content ''
+    width 1em
+
+for $icon in plus check x puzzle-fill
+  $path = '../../node_modules/bootstrap-icons/icons/' + $icon + '.svg'
+  .bi-{$icon}
+    mask-image url($path)

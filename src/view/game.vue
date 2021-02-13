@@ -1,15 +1,9 @@
 <template lang="pug">
-router-view
+#game
 </template>
 
 <script>
-import {RouterView} from 'vue-router';
-
 export default {
-  components: {
-    RouterView,
-  },
-
   setup() {
 
   }
