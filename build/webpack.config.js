@@ -21,8 +21,8 @@ module.exports = {
         use: [
           isDevServer ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader'
-        ]
+          'postcss-loader',
+        ],
       },
       {
         test: /\.styl(us)?$/,
@@ -42,8 +42,8 @@ module.exports = {
           },
           {
             use: 'pug-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.vue$/,

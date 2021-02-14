@@ -1,11 +1,12 @@
 import {
   createRouter,
   createWebHistory,
+  createWebHashHistory,
 } from 'vue-router';
 import Home from '@/view/home';
 import Help from '@/view/help';
-import History from "@/view/history";
-import Game from "@/view/game";
+import History from '@/view/history';
+import Game from '@/view/game';
 
 const routes = [
   {
@@ -31,7 +32,9 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: process.env.NODE_ENV === 'production'
+    ? createWebHistory()
+    : createWebHashHistory(),
   routes,
 });
 
