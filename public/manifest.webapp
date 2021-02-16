@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "Guess number",
+  "description": "This is a simple little puzzle game, but fun to play.",
+  "type": "web",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/assets/icons/kaios_56.png",
+    "112": "/assets/icons/kaios_112.png"
+  },
+  "developer": {
+    "name": "Meathill",
+    "url": "https://blog.meathill.com"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Guess number",
+      "subtitle": "This is a simple little puzzle game, but fun to play.",
+      "description": "This is a simple little puzzle game, but fun to play."
+    }
+  },
+  "default_locale": "en-US"
+}
