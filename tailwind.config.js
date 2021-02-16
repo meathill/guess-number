@@ -10,6 +10,9 @@ module.exports = {
       lineHeight: {
         'number': '3rem',
       },
+      outline: {
+        yellow: '2px solid yellow',
+      },
     },
   },
   variants: {

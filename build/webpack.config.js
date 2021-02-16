@@ -102,4 +102,9 @@ module.exports = {
       new CssMinimizerPlugin(),
     ],
   },
+  target: 'web',
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
 };
