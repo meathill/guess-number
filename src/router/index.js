@@ -1,6 +1,5 @@
 import {
   createRouter,
-  createWebHistory,
   createWebHashHistory,
 } from 'vue-router';
 import Home from '@/view/home';
@@ -32,9 +31,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: process.env.NODE_ENV === 'production'
-    ? createWebHistory()
-    : createWebHashHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 

@@ -5,8 +5,8 @@
   "type": "web",
   "launch_path": "/index.html",
   "icons": {
-    "56": "/assets/icons/kaios_56.png",
-    "112": "/assets/icons/kaios_112.png"
+    "56": "/assets/icons/guess-number_56.png",
+    "112": "/assets/icons/guess-number_112.png"
   },
   "developer": {
     "name": "Meathill",
