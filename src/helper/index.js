@@ -43,3 +43,7 @@ export function formatTime(time) {
   }
   return result.reverse().join(':');
 }
+
+export function sleep(duration) {
+  return new Promise(resolve => setTimeout(resolve, duration));
+}

@@ -58,8 +58,11 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.3"
   },
-  "browserslist": {
-    "chrome": "last 5 version",
-    "firefox": "last 5 version"
-  }
+  "browserslist": [
+    "last 5 chrome versions",
+    "last 5 firefox versions",
+    "last 3 safari versions",
+    "not dead",
+    "not ie 11"
+  ]
 }

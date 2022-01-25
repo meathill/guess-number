@@ -1,7 +1,8 @@
 import {createStore} from 'vuex';
 
-const state = {
+export const isKaiOs = navigator.userAgent.includes('KaiOS');
 
+const state = {
 };
 const mutations = {
 

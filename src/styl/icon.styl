@@ -9,7 +9,7 @@
     content ''
     width 1em
 
-for $icon in plus check x puzzle-fill patch-question-fill
+for $icon in plus check x puzzle-fill patch-question-fill check-square
   $path = '../../node_modules/bootstrap-icons/icons/' + $icon + '.svg'
   .bi-{$icon}
     mask-image url($path)
