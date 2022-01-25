@@ -2,8 +2,6 @@ const {resolve} = require('path');
 const {DefinePlugin} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const isDevServer = process.argv.indexOf('serve') !== -1;
 
@@ -51,17 +49,7 @@ module.exports = {
       },
       {
         test: /\.(webp|png|jpg|gif|svg|woff2|eot|woff|ttf|ico|mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]',
-              outputPath: 'assets',
-              publicPath: 'assets',
-              esModule: false,
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },
@@ -85,26 +73,5 @@ module.exports = {
       filename: 'screen.css',
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        exclude: /node_modules/,
-        terserOptions: {
-          ecma: 9,
-          toplevel: true,
-          compress: {
-            drop_console: true, // eslint-disable-line camelcase
-          },
-        },
-      }),
-      new CssMinimizerPlugin(),
-    ],
-  },
   target: 'web',
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-  },
 };

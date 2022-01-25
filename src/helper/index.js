@@ -27,7 +27,7 @@ export const reals = {
   get() {
     return _reals;
   },
-  set(value) {
+  set(value) { // eslint-disable-line no-unused-vars
     throw new Error('You should not set reals directly');
   }
 }
